@@ -76,6 +76,7 @@ async fn main() -> surf::Result<()>{
     
     let req = client.post(url)
         .content_type(surf::http::mime::JSON)
+        .header("Content-Type", "application/json; charset=utf-8")
         .header("X-TC-Action", action)
         .header("X-TC-Timestamp", time.timestamp().to_string())
         .header("X-TC-Version", version)
